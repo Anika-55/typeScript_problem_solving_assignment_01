@@ -51,6 +51,39 @@ Interface →“ইমপ্লিমেন্ট করার মতো” → 
 Type → “ট্রিকস্টার” → যেকোনো টাইপ (ইউনিয়ন, টুপল, অবজেক্ট, প্রিমিটিভ) সংজ্ঞায়নের জন্য ফ্লেক্সিবল।
 
 
+###2.What is the use of the keyof keyword in TypeScript?
+
+TypeScript-এ keyof কীওয়ার্ড ব্যবহার করা হয় কোনো অবজেক্ট টাইপের সব key-এর ইউনিয়ন টাইপ পাওয়ার জন্য। অর্থাৎ, এটি আমাদের দেয় সেই অবজেক্টে থাকা property গুলোর নামের টাইপ।
+
+ব্যবহার :
+
+1.টাইপ-সেফ অ্যাকসেস: নিশ্চিত করে আপনি কেবল সেই প্রপার্টিগুলো ব্যবহার করছেন যা অবজেক্টে সত্যিই আছে।
+
+2.ডাইনামিক কিন্তু সেফ প্রোগ্রামিং: যখন key গুলো hardcode না করে ব্যবহার করতে চান, তখন টাইপ সেফ উপায় দেয়।
+
+3.Generics এবং Utility Types: জেনেরিক ফাংশন বা টাইপ তৈরিতে ব্যবহার করা হয়, যাতে ফাংশনগুলো অবজেক্টের key অনুযায়ী কাজ করে।
+Example:
+
+interface Person {
+  name: string;
+  age: number;
+  city: string;
+}
+
+// keyof ব্যবহার করে সব key-এর টাইপ পাওয়া
+type PersonKeys = keyof Person;  
+// PersonKeys এখন হবে: "name" | "age" | "city"
+
+// key টাইপ ব্যবহার করে টাইপ-সেফ ফাংশন
+function getValue(obj: Person, key: PersonKeys) {
+  return obj[key];
+}
+
+const person: Person = { name: "Alice", age: 28, city: "Dhake" };
+
+console.log(getValue(person, "name")); // ঠিক আছে
+console.log(getValue(person, "age"));  // ঠিক আছে
+// console.log(getValue(person, "country")); // ❌ error, country নেই
 
 
 
