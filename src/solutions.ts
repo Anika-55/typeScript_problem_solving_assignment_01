@@ -14,7 +14,7 @@ function formatValue(value: string | number | boolean): string | number | boolea
   return value;
 }
 
-// __________________________________________
+
 
 
 function getLength(value: string | any[]): number {
@@ -30,7 +30,8 @@ function getLength(value: string | any[]): number {
   return 0;
 }
 
-// __________________________________________
+
+
 class Person {
   name: string;
   age: number;
@@ -45,7 +46,7 @@ class Person {
   }
 }
 
-//___________________________________________
+
 
 type Item = {
   title: string;
@@ -63,7 +64,7 @@ const books = [
   { title: 'Book C', rating: 5.0 },
 ];
 
-//__________________________________________
+
 
 type User = {
   id: number;
@@ -83,7 +84,7 @@ const users = [
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
-// __________________________________________
+
 
 interface Book {
   title: string;
@@ -107,7 +108,7 @@ const myBook: Book = {
   isAvailable: true,
 };
 
-// __________________________________________
+
 
 function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]): (number | string)[] {
   const unique: (number | string)[] = [];
@@ -140,7 +141,8 @@ function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]): 
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
 
-// __________________________________________
+
+
 
 type Product = {
   name: string;
